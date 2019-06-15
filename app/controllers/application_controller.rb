@@ -29,7 +29,6 @@ class ApplicationController < Sinatra::Base
   end
   
   patch '/recipes/:id' do
-   # binding.pry
     @recipe = Recipe.find_by(id: params[:id])
     @recipe.update(name: params[:name], ingredients: params[:ingredients], cook_time: params[:cook_time])
     @recipe.save
